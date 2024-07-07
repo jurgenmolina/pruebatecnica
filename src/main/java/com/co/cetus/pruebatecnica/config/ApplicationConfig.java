@@ -1,7 +1,6 @@
 package com.co.cetus.pruebatecnica.config;
 
 import com.co.cetus.pruebatecnica.repository.UsuarioRepository;
-import com.co.cetus.pruebatecnica.service.S3Service;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +13,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @RequiredArgsConstructor
@@ -49,18 +47,9 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
-    @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
 
-    @Bean
-    public S3Service s3Service()  {
-        return new S3Service();
-    }
 
 }

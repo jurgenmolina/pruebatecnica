@@ -20,7 +20,7 @@ public class ProductoRequest {
     private String descripcion;
 
     @NotBlank(message = "El estado no puede estar vacío")
-    @Pattern(regexp = "^(Activo|Inactivo)$", message = "Estado inválido")
+    @Pattern(regexp = "^(ACTIVO|INACTIVO)$", message = "Estado inválido")
     private String estado;
 
     @NotBlank(message = "El nombre del laboratorio no puede estar vacío")

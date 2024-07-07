@@ -20,5 +20,4 @@ public class RecepcionProductoResponse {
     private String registroInvima;
     private LocalDateTime fechaVencimiento;
     private String estadoPresentacion;
-    private UsuarioResponse usuario;
 }

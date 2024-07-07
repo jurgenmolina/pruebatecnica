@@ -38,19 +38,16 @@ public class RecepcionProductoServiceImpl implements RecepcionProductoService {
     @Transactional
     public RecepcionProductoResponse crearRecepcionProducto(RecepcionProductoRequest request) {
         try {
-            Producto producto = productoRepository.findById(request.getIdProducto())
-                    .orElseThrow(() -> new RuntimeException("Producto no encontrado con id: " + request.getIdProducto()));
+            Producto producto = productoRepository.findById(request.getProducto())
+                    .orElseThrow(() -> new RuntimeException("Producto no encontrado con id: " + request.getProducto()));
 
-            Proveedor proveedor = proveedorRepository.findById(request.getIdProveedor())
-                    .orElseThrow(() -> new RuntimeException("Proveedor no encontrado con id: " + request.getIdProveedor()));
+            Proveedor proveedor = proveedorRepository.findById(request.getProveedor())
+                    .orElseThrow(() -> new RuntimeException("Proveedor no encontrado con id: " + request.getProveedor()));
 
-            Usuario usuario = usuarioRepository.findById(request.getIdUsuario())
-                    .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id: " + request.getIdUsuario()));
 
             RecepcionProducto recepcionProducto = modelMapper.map(request, RecepcionProducto.class);
             recepcionProducto.setProducto(producto);
             recepcionProducto.setProveedor(proveedor);
-            recepcionProducto.setUsuario(usuario);
 
             RecepcionProducto recepcionGuardada = recepcionProductoRepository.save(recepcionProducto);
             logger.info("Recepción de producto creada con éxito. ID: {}", recepcionGuardada.getId());
@@ -137,11 +134,11 @@ public class RecepcionProductoServiceImpl implements RecepcionProductoService {
             RecepcionProducto recepcionExistente = recepcionProductoRepository.findById(id)
                     .orElseThrow(() -> new RuntimeException("Recepción de producto no encontrada con id: " + id));
 
-            Producto producto = productoRepository.findById(request.getIdProducto())
-                    .orElseThrow(() -> new RuntimeException("Producto no encontrado con id: " + request.getIdProducto()));
+            Producto producto = productoRepository.findById(request.getProducto())
+                    .orElseThrow(() -> new RuntimeException("Producto no encontrado con id: " + request.getProducto()));
 
-            Proveedor proveedor = proveedorRepository.findById(request.getIdProveedor())
-                    .orElseThrow(() -> new RuntimeException("Proveedor no encontrado con id: " + request.getIdProveedor()));
+            Proveedor proveedor = proveedorRepository.findById(request.getProveedor())
+                    .orElseThrow(() -> new RuntimeException("Proveedor no encontrado con id: " + request.getProveedor()));
 
             modelMapper.map(request, recepcionExistente);
             recepcionExistente.setProducto(producto);

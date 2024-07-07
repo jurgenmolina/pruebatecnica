@@ -17,10 +17,10 @@ public class RecepcionProductoRequest {
     private LocalDateTime fechaHoraRecepcion;
 
     @NotNull(message = "El ID del producto no puede estar vacío")
-    private Integer idProducto;
+    private Integer producto;
 
     @NotNull(message = "El ID del proveedor no puede estar vacío")
-    private Integer idProveedor;
+    private Integer proveedor;
 
     @NotBlank(message = "El número de factura no puede estar vacío")
     private String numeroFactura;
@@ -40,6 +40,4 @@ public class RecepcionProductoRequest {
 
     private String estadoPresentacion;
 
-    @NotNull(message = "El ID del usuario no puede estar vacío")
-    private Integer idUsuario;
 }

@@ -12,7 +12,7 @@ public class ProveedorResponse {
     private Integer id;
     private String tipoIdentificacion;
     private String identificacion;
-    private String nombreRazonSocial;
+    private String razonSocial;
     private String direccion;
     private String nombreContacto;
     private String celularContacto;

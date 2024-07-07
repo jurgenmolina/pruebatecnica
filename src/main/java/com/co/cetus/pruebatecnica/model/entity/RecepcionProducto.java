@@ -47,7 +47,4 @@ public class RecepcionProducto {
     @Column(name = "estado_presentacion")
     private String estadoPresentacion;
 
-    @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
-    private Usuario usuario;
 }
