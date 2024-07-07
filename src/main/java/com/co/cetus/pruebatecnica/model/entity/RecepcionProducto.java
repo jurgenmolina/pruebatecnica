@@ -29,7 +29,7 @@ public class RecepcionProducto {
     @JoinColumn(name = "id_proveedor", nullable = false)
     private Proveedor proveedor;
 
-    @Column(name = "numero_factura", nullable = false)
+    @Column(name = "numero_factura", nullable = false, unique = true)
     private String numeroFactura;
 
     @Column(name = "cantidad", nullable = false)
